@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vmodel="clr-namespace:EjercicioMAUI.Models.VM"
+             x:Class="EjercicioMAUI.Views.AddPersonaView"
+             Title="AddPersonaView">
+
+    <ContentPage.BindingContext>
+        <vmodel:VMAddPersona/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+
+        <Entry 
+            Placeholder="Nombre" 
+            Text="{Binding Nombre}"
+            MaximumWidthRequest="300"
+            Margin="0,20,0,20"
+            >
+            
+        </Entry>
+        <Entry 
+            Placeholder="Apellidos" 
+            Text="{Binding Apellidos}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,20">
+            
+        </Entry>
+        <Entry 
+            Placeholder="Telefono" 
+            Text="{Binding Telefono}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,20">
+            
+        </Entry>
+        <Entry 
+            Placeholder="Direccion" 
+            Text="{Binding Direccion}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,20">
+            
+        </Entry>
+        <Entry Placeholder="Foto"
+               Text="{Binding Foto}"
+               MaximumWidthRequest="300"
+                Margin="0,0,0,20">
+            
+        </Entry>
+        <DatePicker
+            Date="{Binding FechaNacimiento}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,20"
+            />
+        <Picker x:Name="picker"
+                Title="Selecciona un departamento"
+                ItemsSource="{Binding ListaDepartamentos}" 
+                ItemDisplayBinding="{Binding NombreDepartamento}"
+                SelectedItem="{Binding DepartamentoSeleccionado}"
+                MaximumWidthRequest="300"
+                Margin="0,0,0,20"
+                />
+        <Button 
+            Text="Add" 
+            Command="{Binding BtnAddPersonaCommand}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,25">
+        </Button>
+    </VerticalStackLayout>
+</ContentPage>
+

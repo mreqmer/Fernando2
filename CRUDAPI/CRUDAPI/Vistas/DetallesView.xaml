@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUDAPI.Vistas.DetallesView"
+             xmlns:vmodel="clr-namespace:CRUDAPI.VM"
+             Title="DetallesView">
+    
+    <ContentPage.BindingContext>
+        <vmodel:VMDetalles/>
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20">
+        <!-- Detalles de la persona como Labels -->
+        <Label Text="ID:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Id}" FontSize="18" Padding="0,0,0,10"/>
+
+        <Label Text="Nombre:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Nombre}" FontSize="18" Padding="0,0,0,10"/>
+
+        <Label Text="Apellidos:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Apellidos}" FontSize="18" Padding="0,0,0,10"/>
+
+        <Label Text="Teléfono:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Telefono}" FontSize="18" Padding="0,0,0,10"/>
+
+        <Label Text="Dirección:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Direccion}" FontSize="18" Padding="0,0,0,10"/>
+
+        <Label Text="Foto:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.Foto}" FontSize="18" Padding="0,0,0,10"/>
+
+        <!-- Fecha de Nacimiento como Label -->
+        <Label Text="Fecha de Nacimiento:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding Persona.FechaNacimiento, StringFormat='{0:dd/MM/yyyy}'}" FontSize="18" Padding="0,0,0,10"/>
+
+        <!-- Departamento como Label -->
+        <Label Text="Departamento:" FontSize="18" Padding="0,0,0,5"/>
+        <Label Text="{Binding DepartamentoSeleccionado.NombreDepartamento}" FontSize="18" Padding="0,0,0,10"/>
+
+        <!-- Botón -->
+        <Button Text="Add" Command="{Binding BtnEditCommand}" MaximumWidthRequest="300" Margin="0,0,0,25"/>
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioMAUI.Views.EditPersonaView2"
+             xmlns:vmodel="clr-namespace:EjercicioMAUI.Models.VM"
+             Title="EditPersonaView2">
+
+    <ContentPage.BindingContext>
+        <vmodel:VMEditPersona/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <Entry
+            Text="{Binding Persona.Id}"
+            IsReadOnly="True"
+            MaximumWidthRequest="300"
+            Margin="0,20,0,20"
+            />
+        <Entry 
+        Placeholder="Nombre" 
+        Text="{Binding Persona.Nombre}"
+        MaximumWidthRequest="300"
+        Margin="0,20,0,20"
+        >
+
+    </Entry>
+    <Entry 
+        Placeholder="Apellidos" 
+        Text="{Binding Persona.Apellidos}"
+        MaximumWidthRequest="300"
+        Margin="0,0,0,20">
+
+    </Entry>
+    <Entry 
+        Placeholder="Telefono" 
+        Text="{Binding Persona.Telefono}"
+        MaximumWidthRequest="300"
+        Margin="0,0,0,20">
+
+    </Entry>
+    <Entry 
+        Placeholder="Direccion" 
+        Text="{Binding Persona.Direccion}"
+        MaximumWidthRequest="300"
+        Margin="0,0,0,20">
+
+    </Entry>
+        <Entry Placeholder="Foto"
+           Text="{Binding Persona.Foto}"
+           MaximumWidthRequest="300"
+            Margin="0,0,0,20">
+
+    </Entry>
+        <DatePicker
+        Date="{Binding Persona.FechaNacimiento}"
+        MaximumWidthRequest="300"
+        Margin="0,0,0,20"
+        />
+
+        <Picker x:Name="picker"
+         Title="Selecciona un departamento"
+         ItemsSource="{Binding ListadoDepartamentos}"                 
+         ItemDisplayBinding="{Binding NombreDepartamento}"
+         SelectedItem="{Binding DepartamentoSeleccionado}"
+         MaximumWidthRequest="300"
+         Margin="0,0,0,20"
+         />
+
+        <Button 
+            Text="Add" 
+            Command="{Binding BtnEditCommand}"
+            MaximumWidthRequest="300"
+            Margin="0,0,0,25">
+            </Button>
+
+    </VerticalStackLayout>
+
+</ContentPage>

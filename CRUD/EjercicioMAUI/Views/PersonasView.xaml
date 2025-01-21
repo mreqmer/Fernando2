@@ -1,0 +1,99 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EjercicioMAUI.Views.PersonasView"
+             xmlns:vmodel="clr-namespace:EjercicioMAUI.Models.VM"
+             Title="PersonasView">
+    <ContentPage.BindingContext>
+        <vmodel:VMListaPersonasDepartamento/>
+    </ContentPage.BindingContext>
+
+    <!-- Usamos Grid como contenedor principal -->
+    <Grid>
+       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            
+            <RowDefinition Height="*"/>
+           
+        </Grid.RowDefinitions>
+
+        <!-- Botones en la primera 0 -->
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="0" Padding="10" Spacing="10">
+            
+            <Button 
+                Command="{Binding BtnDeleteCommand}"
+                HorizontalOptions="Center"
+                ImageSource="borrar.png"
+                MaximumHeightRequest="50"/>
+            <Button
+                Command="{Binding BtnEditCommand}" 
+                HorizontalOptions="Center"
+                ImageSource="editar.png"
+                MaximumHeightRequest="50"
+                Margin="20,0,0,0" />
+            
+        </StackLayout>
+        
+
+        <!-- ListView en la fila 1 -->
+        <ListView
+            Grid.Row="1"
+            ItemsSource="{Binding PersonasConDept}"
+            HasUnevenRows="False"
+            RowHeight="200"
+            SelectedItem="{Binding PersonaSelecionada}">
+
+            <ListView.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding BtnEditCommand}" 
+                                               NumberOfTapsRequired="2"/>
+            </ListView.GestureRecognizers>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Frame Margin="30, 10, 30, 20"
+                               Padding="10"
+                               
+                               CornerRadius="10"
+                               BorderColor="Transparent"
+                               HasShadow="True">
+                            <Grid Padding="20, 3, 0, 0" ColumnDefinitions="Auto,*">
+                                <Image Grid.Column="0"
+                                       Source="{Binding Foto}"
+                                       MaximumWidthRequest="200"
+                                       MaximumHeightRequest="200" />
+                                <Grid Grid.Column="1" BackgroundColor="#E1E1E1" Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Text="{Binding Id}" TextColor="Black"/>
+                                    <Label Grid.Row="1" Text="{Binding Nombre}" TextColor="Black"/>
+                                    <Label Grid.Row="2" Text="{Binding FechaNacimiento}" TextColor="Black"/>
+                                    <Label Grid.Row="3" Text="{Binding Departamento}" TextColor="Black"/>
+                                </Grid>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+       
+        <Button Grid.Row="1"
+                Text="+"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                CornerRadius="25"
+                WidthRequest="50"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Command="{Binding BtnAddCommand}"
+                Margin="20"
+                />
+    </Grid>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿Clases
+
+	ClsCasilla
+
+		bool revelado {get; set;}
+		bool esBomba {get; set;} 
+		string img {get;}
+	
+Bl
+	Manjeadora
+		SeleccionaTam(int dificultad) -> rellena el tablero dependiendo de la dificultad
+
+Model
+
+	ModelTablero
+		
+		
+		List<ClsCasilla> tablero {get; set;}
+
+		+ModelTablero(tamX, tamY){
+		
+		}
+
+		
+
+		
+		
+		
+VM
+	VMJuegoBuscaminas
+
+	int tiradas
+	
+	
+	
+	
