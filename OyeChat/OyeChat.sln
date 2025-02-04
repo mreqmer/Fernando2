@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSignalRApp.Client", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{99D63D50-8EF5-4838-9597-9F67986D0758}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatMAUI", "ChatMAUI\ChatMAUI.csproj", "{F212062B-69B7-40EE-835E-54CD03DAB644}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,12 @@ Global
 		{99D63D50-8EF5-4838-9597-9F67986D0758}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99D63D50-8EF5-4838-9597-9F67986D0758}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99D63D50-8EF5-4838-9597-9F67986D0758}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F212062B-69B7-40EE-835E-54CD03DAB644}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

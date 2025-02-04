@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,13 @@ import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
-  title = 'HolaMundo2';
+  title = 'Mi Aplicación';
+  constructor(private router: Router) {}
+
+  GoToFormulario(): void {
+    this.router.navigate(['/formulario']);
+    alert("Hola Mundo");
+  }
 }
