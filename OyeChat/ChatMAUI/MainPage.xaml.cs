@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿
 using Models;
 using System.Collections.ObjectModel;
 namespace ChatMAUI

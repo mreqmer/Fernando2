@@ -10,6 +10,7 @@
     <ProjectReference Include="..\..\Models\Models.csproj" />
     <ProjectReference Include="..\BlazorSignalRApp.Client\BlazorSignalRApp.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.12" />
   </ItemGroup>
 
 </Project>
